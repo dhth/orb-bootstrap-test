@@ -1,0 +1,25 @@
+[settings]
+lockfile = true
+
+[tool_config]
+locked = true
+
+[tools]
+lazygit = "0.64.1"
+
+[tools."github:dhth/terminal-control"]
+version = "0.6.0-r1"
+version_prefix = "musl-v"
+os = ["linux/x64"]
+
+[shell_alias]
+lg = "lazygit"
+
+[bootstrap.mise_shell_activate]
+bash_profile = "shims"
+
+[dotfiles]
+"~/.config/amp/settings.json" = { source = "dotfiles/amp/settings.json", mode = "copy" }
+"~/.config/git/config/preferences" = { source = "dotfiles/git/config", template = "tera" }
+"~/.config/lazygit/config.yml" = { source = "dotfiles/lazygit/config.yml", mode = "copy" }
+"~/.bash_profile/mise-bin" = { line = 'export PATH="$HOME/.local/bin:$PATH"', position = "prepend" }
